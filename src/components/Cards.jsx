@@ -159,6 +159,37 @@ export function PieChartCard() {
   );
 }
 
+export function SingleTransCard() {
+  return (
+    <div className="self-stretch py-5 bg-white border-b border-gray-200 justify-between items-center inline-flex">
+      <div className="justify-start items-center gap-4 flex">
+        <div className="w-10 h-10 relative">
+          <div className="w-10 h-10 left-0 top-0 absolute bg-blue-600 rounded-full" />
+          <div className="w-5 h-5 left-[10px] top-[10px] absolute rounded">
+            <TransIcon />
+          </div>
+        </div>
+        <div className="flex-col justify-center items-start inline-flex">
+          <div className="text-black text-base font-normal font-sans leading-normal">
+            Lending & Renting
+          </div>
+          <div className="text-gray-500 text-xs font-normal font-sans leading-none">
+            3 hours ago
+          </div>
+        </div>
+      </div>
+      <div className="justify-start items-center gap-2 flex">
+        <div className="text-lime-500 text-base font-semibold font-sans leading-normal">
+          -
+        </div>
+        <div className="text-lime-500 text-base font-semibold font-sans leading-normal">
+          1,000₮
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function TransactionCard() {
   return (
     <div className="h-[460px] left-[120px] top-[652px] absolute bg-white rounded-xl flex-col justify-start items-start inline-flex">
@@ -168,136 +199,11 @@ export function TransactionCard() {
         </div>
       </div>
       <div className="self-stretch h-[400px] px-6 flex-col justify-start items-start flex">
-        <div className="self-stretch py-5 bg-white border-b border-gray-200 justify-between items-center inline-flex">
-          <div className="justify-start items-center gap-4 flex">
-            <div className="w-10 h-10 relative">
-              <div className="w-10 h-10 left-0 top-0 absolute bg-blue-600 rounded-full" />
-              <div className="w-5 h-5 left-[10px] top-[10px] absolute rounded">
-                <TransIcon />
-              </div>
-            </div>
-            <div className="flex-col justify-center items-start inline-flex">
-              <div className="text-black text-base font-normal font-sans leading-normal">
-                Lending & Renting
-              </div>
-              <div className="text-gray-500 text-xs font-normal font-sans leading-none">
-                3 hours ago
-              </div>
-            </div>
-          </div>
-          <div className="justify-start items-center gap-2 flex">
-            <div className="text-lime-500 text-base font-semibold font-sans leading-normal">
-              -
-            </div>
-            <div className="text-lime-500 text-base font-semibold font-sans leading-normal">
-              1,000₮
-            </div>
-          </div>
-        </div>
-        <div className="self-stretch py-5 bg-white border-b border-gray-200 justify-between items-center inline-flex">
-          <div className="justify-start items-center gap-4 flex">
-            <div className="w-10 h-10 relative">
-              <div className="w-10 h-10 left-0 top-0 absolute bg-blue-600 rounded-full" />
-              <div className="w-5 h-5 left-[10px] top-[10px] absolute rounded">
-                <TransIcon />
-              </div>
-            </div>
-            <div className="flex-col justify-center items-start inline-flex">
-              <div className="text-black text-base font-normal font-sans leading-normal">
-                Lending & Renting
-              </div>
-              <div className="text-gray-500 text-xs font-normal font-sans leading-none">
-                3 hours ago
-              </div>
-            </div>
-          </div>
-          <div className="justify-start items-center gap-2 flex">
-            <div className="text-lime-500 text-base font-semibold font-sans leading-normal">
-              -
-            </div>
-            <div className="text-lime-500 text-base font-semibold font-sans leading-normal">
-              1,000₮
-            </div>
-          </div>
-        </div>
-        <div className="self-stretch py-5 bg-white border-b border-gray-200 justify-between items-center inline-flex">
-          <div className="justify-start items-center gap-4 flex">
-            <div className="w-10 h-10 relative">
-              <div className="w-10 h-10 left-0 top-0 absolute bg-blue-600 rounded-full" />
-              <div className="w-5 h-5 left-[10px] top-[10px] absolute rounded">
-                <TransIcon />
-              </div>
-            </div>
-            <div className="flex-col justify-center items-start inline-flex">
-              <div className="text-black text-base font-normal font-sans leading-normal">
-                Lending & Renting
-              </div>
-              <div className="text-gray-500 text-xs font-normal font-sans leading-none">
-                3 hours ago
-              </div>
-            </div>
-          </div>
-          <div className="justify-start items-center gap-2 flex">
-            <div className="text-lime-500 text-base font-semibold font-sans leading-normal">
-              -
-            </div>
-            <div className="text-lime-500 text-base font-semibold font-sans leading-normal">
-              1,000₮
-            </div>
-          </div>
-        </div>
-        <div className="self-stretch py-5 bg-white border-b border-gray-200 justify-between items-center inline-flex">
-          <div className="justify-start items-center gap-4 flex">
-            <div className="w-10 h-10 relative">
-              <div className="w-10 h-10 left-0 top-0 absolute bg-blue-600 rounded-full" />
-              <div className="w-5 h-5 left-[10px] top-[10px] absolute rounded">
-                <TransIcon />
-              </div>
-            </div>
-            <div className="flex-col justify-center items-start inline-flex">
-              <div className="text-black text-base font-normal font-sans leading-normal">
-                Lending & Renting
-              </div>
-              <div className="text-gray-500 text-xs font-normal font-sans leading-none">
-                3 hours ago
-              </div>
-            </div>
-          </div>
-          <div className="justify-start items-center gap-2 flex">
-            <div className="text-lime-500 text-base font-semibold font-sans leading-normal">
-              -
-            </div>
-            <div className="text-lime-500 text-base font-semibold font-sans leading-normal">
-              1,000₮
-            </div>
-          </div>
-        </div>
-        <div className="self-stretch py-5 bg-white border-gray-200 justify-between items-center inline-flex">
-          <div className="justify-start items-center gap-4 flex">
-            <div className="w-10 h-10 relative">
-              <div className="w-10 h-10 left-0 top-0 absolute bg-blue-600 rounded-full" />
-              <div className="w-5 h-5 left-[10px] top-[10px] absolute rounded">
-                <TransIcon />
-              </div>
-            </div>
-            <div className="flex-col justify-center items-start inline-flex">
-              <div className="text-black text-base font-normal font-sans leading-normal">
-                Lending & Renting
-              </div>
-              <div className="text-gray-500 text-xs font-normal font-sans leading-none">
-                3 hours ago
-              </div>
-            </div>
-          </div>
-          <div className="justify-start items-center gap-2 flex">
-            <div className="text-lime-500 text-base font-semibold font-sans leading-normal">
-              -
-            </div>
-            <div className="text-lime-500 text-base font-semibold font-sans leading-normal">
-              1,000₮
-            </div>
-          </div>
-        </div>
+        <SingleTransCard />
+        <SingleTransCard />
+        <SingleTransCard />
+        <SingleTransCard />
+        <SingleTransCard />
       </div>
     </div>
   );
