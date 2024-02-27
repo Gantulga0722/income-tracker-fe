@@ -6,7 +6,7 @@ import {
   ExpenseCard,
   BarChartCard,
   PieChartCard,
-  TransactionCard,
+  LastTransCard,
 } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +21,7 @@ export default function Home() {
       <ExpenseCard />
       <BarChartCard />
       <PieChartCard />
-      <TransactionCard />
+      <LastTransCard />
     </main>
   );
 }

@@ -1,5 +1,5 @@
 import { data } from "autoprefixer";
-import { Category, Type } from "@/dummyData";
+import { Category, Type, Transactions, YesTransactions } from "@/dummyData";
 
 import {
   WifiIcon,
@@ -15,6 +15,7 @@ import {
   PageLeftIcon,
   PageRighticon,
   SortIcon,
+  FoodDrinkIcon,
 } from "./Icons";
 import {
   Chart as ChartJS,
@@ -256,7 +257,7 @@ export function SingleTransCard() {
   );
 }
 
-export function TransactionCard() {
+export function LastTransCard() {
   return (
     <div className="h-[460px] left-[120px] top-[652px] absolute bg-white rounded-xl flex-col justify-start items-start inline-flex">
       <div className="w-[1200px] h-14 px-6 py-4 border-b border-slate-200 justify-start items-center gap-2 inline-flex">
@@ -439,6 +440,78 @@ export function AllTransTotalCard() {
           35,500₮
         </div>
       </div>
+    </div>
+  );
+}
+
+export function TransCard() {
+  return (
+    <div className="flex flex-col gap-3">
+      {Transactions.map((trans) => (
+        <div className="w-[894px] h-16 px-6 py-3 bg-white rounded-xl border border-gray-200 justify-between items-center inline-flex">
+          <div className="justify-start items-center gap-4 flex">
+            <input
+              type="checkbox"
+              className="w-6 h-6 opacity-20 rounded border border-gray-800"
+            />
+            <div className="w-10 h-10 bg-blue-600 rounded-full justify-center items-center flex">
+              {trans.icon}
+            </div>
+            <div className="flex-col justify-start items-start inline-flex">
+              <div className="text-black text-base font-normal font-sans leading-normal">
+                {trans.category}
+              </div>
+              <div className="text-gray-500 text-xs font-normal font-sans leading-none">
+                14:00
+              </div>
+            </div>
+          </div>
+          <div className="justify-start items-center gap-2 flex">
+            <div className="text-green-500 text-base font-semibold font-sans leading-normal">
+              -
+            </div>
+            <div className="text-green-500 text-base font-semibold font-sans leading-normal">
+              1,000₮
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function YesTransCard() {
+  return (
+    <div className="flex flex-col gap-3">
+      {YesTransactions.map((trans) => (
+        <div className="w-[894px] h-16 px-6 py-3 bg-white rounded-xl border border-gray-200 justify-between items-center inline-flex">
+          <div className="justify-start items-center gap-4 flex">
+            <input
+              type="checkbox"
+              className="w-6 h-6 opacity-20 rounded border border-gray-800"
+            />
+            <div className="w-10 h-10 bg-blue-600 rounded-full justify-center items-center flex">
+              {trans.icon}
+            </div>
+            <div className="flex-col justify-start items-start inline-flex">
+              <div className="text-black text-base font-normal font-sans leading-normal">
+                {trans.category}
+              </div>
+              <div className="text-gray-500 text-xs font-normal font-sans leading-none">
+                14:00
+              </div>
+            </div>
+          </div>
+          <div className="justify-start items-center gap-2 flex">
+            <div className="text-green-500 text-base font-semibold font-sans leading-normal">
+              -
+            </div>
+            <div className="text-green-500 text-base font-semibold font-sans leading-normal">
+              1,000₮
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

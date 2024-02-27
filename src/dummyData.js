@@ -9,6 +9,7 @@ import {
   CateArrowIcon,
   CatePlusIcon,
   CateSrokeIcon,
+  FoodDrinkIcon,
 } from "./components/Icons";
 
 export const Category = [
@@ -32,3 +33,13 @@ export const Category = [
 ];
 
 export const Type = [{ type: "All" }, { type: "Income" }, { type: "Expense" }];
+
+export const Transactions = [
+  { icon: <TransIcon />, category: "lending & Renting" },
+  { icon: <FoodDrinkIcon />, category: "Food & Drinks" },
+];
+
+export const YesTransactions = [
+  { icon: <TransIcon />, category: "lending & Renting" },
+  { icon: <FoodDrinkIcon />, category: "Food & Drinks" },
+];

@@ -7,6 +7,7 @@ import {
   PagingComp,
   SortCard,
   AllTransTotalCard,
+  TransCard,
 } from "@/components";
 import { Category } from "@/dummyData";
 
@@ -64,6 +65,25 @@ export default function record() {
         </div>
         <div className="w-[894px] h-[980px] flex-col justify-start items-start gap-6 inline-flex">
           <AllTransTotalCard />
+          <div className="w-[894px] h-[404px] flex-col justify-start items-start gap-3 inline-flex">
+            <div className="text-black text-base font-semibold font-sans leading-normal">
+              Today
+            </div>
+            <div className="flex flex-col gap-3">
+              <TransCard />
+              <TransCard />
+            </div>
+          </div>
+          <div className="w-[894px] h-[404px] flex-col justify-start items-start gap-3 inline-flex">
+            <div className="text-black text-base font-semibold font-sans leading-normal">
+              Yesterday
+            </div>
+            <div className="flex flex-col gap-3">
+              <TransCard />
+              <TransCard />
+              <TransCard />
+            </div>
+          </div>
         </div>
       </div>
     </div>
