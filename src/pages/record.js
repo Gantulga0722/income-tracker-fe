@@ -4,11 +4,15 @@ import {
   CategoryCard,
   AddCategoryCard,
   AmounRangeCard,
+  PagingComp,
+  SortCard,
+  AllTransTotalCard,
 } from "@/components";
+import { Category } from "@/dummyData";
 
 export default function record() {
   return (
-    <div className="w-[1440px] h-[1208px] relative bg-gray-100 pt-24 px-[120px] py-4">
+    <div className="w-[1440px] h-[1208px] relative bg-gray-100 pt-24 px-[120px] py-4 justify-between flex">
       <div className="w-[282px] h-[1080px] px-4 py-6 bg-gray-50 rounded-xl border border-gray-200 flex-col justify-start items-start gap-6 inline-flex ">
         <div className="w-[250px] h-[88px] flex-col justify-start items-start gap-6 inline-flex">
           <div className="text-black text-2xl font-semibold font-sans leading-loose">
@@ -29,8 +33,6 @@ export default function record() {
           </div>
           <div className="w-[109px] relative">
             <TypeCard />
-            <TypeCard />
-            <TypeCard />
           </div>
         </div>
         <div className="w-[250px] h-[520px] flex-col justify-start items-start gap-4 inline-flex">
@@ -46,16 +48,6 @@ export default function record() {
           </div>
           <div className="self-stretch h-[472px] flex-col justify-start items-start gap-2 flex">
             <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
           </div>
           <div>
             <AddCategoryCard />
@@ -63,6 +55,15 @@ export default function record() {
         </div>
         <div>
           <AmounRangeCard />
+        </div>
+      </div>
+      <div className="px-4 py-6 flex flex-col gap-6">
+        <div className="w-[894px] h-12 rounded-xl justify-between items-center inline-flex">
+          <PagingComp />
+          <SortCard />
+        </div>
+        <div className="w-[894px] h-[980px] flex-col justify-start items-start gap-6 inline-flex">
+          <AllTransTotalCard />
         </div>
       </div>
     </div>

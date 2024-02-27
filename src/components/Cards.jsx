@@ -1,4 +1,6 @@
 import { data } from "autoprefixer";
+import { Category, Type } from "@/dummyData";
+
 import {
   WifiIcon,
   GeldIconWhite,
@@ -10,6 +12,9 @@ import {
   CateArrowIcon,
   CatePlusIcon,
   CateSrokeIcon,
+  PageLeftIcon,
+  PageRighticon,
+  SortIcon,
 } from "./Icons";
 import {
   Chart as ChartJS,
@@ -272,33 +277,38 @@ export function TransactionCard() {
 
 export function TypeCard() {
   return (
-    <div className="w-[67px] h-8 px-3 rounded-lg justify-center items-center gap-2 inline-flex">
-      <input
-        type="radio"
-        className="w-4 h-4 opacity-20 rounded-[50%] border border-gray-700 justify-center items-center flex"
-      />
-      <div className="text-gray-800 text-base font-normal font-sans leading-normal">
-        All
-      </div>
+    <div className="w-[67px] h-8 px-3 rounded-lg justify-center items-start gap-2 inline-flex flex-col">
+      {Type.map((type) => (
+        <div className="flex gap-2 justify-center items-center">
+          <input
+            type="radio"
+            className="w-4 h-4 opacity-20 rounded-[50%] border border-gray-700 justify-center items-center flex"
+          />
+          <div className="text-gray-800 text-base font-normal font-sans leading-normal">
+            {type.type}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
 
 export function CategoryCard() {
   return (
-    <div className="w-[250px] h-8 justify-between items-center inline-flex">
-      <div className="px-3 rounded-lg justify-between items-center gap-2 flex w-[100%]">
-        <div className="w-5 h-5 relative">
-          <EyeIcon />
+    <div className="self-stretch flex-col justify-start items-start gap-2 flex">
+      {Category.map((cate) => (
+        <div className="px-3 rounded-lg justify-between items-center gap-2 flex w-[100%]">
+          <div className="w-5 h-5 relative">
+            <EyeIcon />
+          </div>
+          <div className="flex flex-nowrap text-gray-800 text-base font-normal font-sans leading-normal w-[170px]">
+            {cate.category}
+          </div>
+          <div className="w-5 h-5">
+            <CateArrowIcon />
+          </div>
         </div>
-        <div className="flex flex-nowrap text-gray-800 text-base font-normal font-sans leading-normal w-[170px]">
-          Food & Drinks
-        </div>
-        <div className="w-5 h-5">
-          <CateArrowIcon />
-        </div>
-      </div>
-      <div className="w-5 h-5 relative origin-top-left -rotate-90" />
+      ))}
     </div>
   );
 }
@@ -370,6 +380,63 @@ export function AmounRangeCard() {
               1000
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function PagingComp() {
+  return (
+    <div className="w-[188px] h-8 justify-start items-center gap-4 inline-flex">
+      <div className="w-8 h-8 bg-gray-200 rounded-lg justify-center items-center gap-1 flex">
+        <div className="w-5 h-5 relative">
+          <PageLeftIcon />
+        </div>
+      </div>
+      <div className="text-black text-base font-normal font-sans leading-normal">
+        Last 30 Days
+      </div>
+      <div className="w-8 h-8 bg-gray-200 rounded-lg justify-center items-center gap-1 flex">
+        <div className="w-5 h-5 relative">
+          <PageRighticon />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function SortCard() {
+  return (
+    <div className="w-[180px] h-12 p-4 bg-gray-50 rounded-lg border border-gray-300 justify-start items-center inline-flex">
+      <div className="grow shrink basis-0 text-gray-800 text-base font-semibold font-sans leading-normal">
+        Newest fisrt
+      </div>
+      <div className="w-6 h-6 relative">
+        <SortIcon />
+      </div>
+    </div>
+  );
+}
+
+export function AllTransTotalCard() {
+  return (
+    <div className="w-[894px] h-12 px-6 py-3 bg-white rounded-xl border border-gray-200 justify-between items-center inline-flex">
+      <div className="justify-start items-center gap-4 flex">
+        <input
+          type="checkbox"
+          className="w-6 h-6 opacity-20 rounded border border-gray-800 justify-center items-center flex"
+        />
+        <div className="text-black text-base font-normal font-sans leading-normal">
+          Select all
+        </div>
+      </div>
+      <div className="justify-start items-center gap-2 flex">
+        <div className="text-slate-400 text-base font-semibold font-sans leading-normal">
+          -
+        </div>
+        <div className="text-slate-400 text-base font-semibold font-sans leading-normal">
+          35,500₮
         </div>
       </div>
     </div>
