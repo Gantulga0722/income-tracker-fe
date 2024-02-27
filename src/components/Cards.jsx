@@ -1,3 +1,4 @@
+import { data } from "autoprefixer";
 import {
   WifiIcon,
   GeldIconWhite,
@@ -5,7 +6,30 @@ import {
   IncomeIcon,
   ExpenseIcon,
   TransIcon,
+  EyeIcon,
+  CateArrowIcon,
+  CatePlusIcon,
+  CateSrokeIcon,
 } from "./Icons";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+} from "chart.js";
+import { Doughnut, Bar, Line } from "react-chartjs-2";
+
+ChartJS.register(
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement
+);
 
 export function NoiseCard() {
   return (
@@ -138,12 +162,47 @@ export function BarChartCard() {
           Income - Expense
         </div>
       </div>
-      <div className="w-[588px] h-[226px] px-6 py-8 flex-col justify-end items-start gap-8 inline-flex"></div>
+      <div className="w-[588px] h-[226px] px-6 py-8 flex-col justify-end items-start gap-8 inline-flex">
+        <Bar
+          data={{
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+            datasets: [
+              {
+                labels: "First",
+                data: [
+                  3000000, 3000000, 3000000, 3000000, 3000000, 3000000, 3000000,
+                ],
+              },
+              {
+                label: "Second",
+                data: [
+                  2100000, 2100000, 2100000, 2100000, 2100000, 2100000, 2100000,
+                ],
+              },
+            ],
+          }}
+        />
+      </div>
     </div>
   );
 }
 
 export function PieChartCard() {
+  const data = {
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [300, 50, 100],
+        backgroundColor: [
+          "rgb(255, 99, 132)",
+          "rgb(54, 162, 235)",
+          "rgb(255, 205, 86)",
+        ],
+        hoverOffset: 4,
+      },
+    ],
+    labels: ["Red", "Blue", "Yellow"],
+  };
   return (
     <div className="h-[284px] left-[732px] top-[344px] absolute bg-white rounded-xl flex-col justify-start items-start inline-flex">
       <div className="w-[588px] h-14 px-6 py-4 border-b border-slate-200 justify-between items-center inline-flex">
@@ -154,7 +213,9 @@ export function PieChartCard() {
           Jun 1 - Nov 30
         </div>
       </div>
-      <div className="w-[588px] h-[228px] px-6 py-8 flex-col justify-start items-start gap-10 inline-flex"></div>
+      <div className="w-[588px] h-[228px] px-6 py-8 flex-col justify-start items-start gap-10 inline-flex">
+        <Doughnut data={data} />
+      </div>
     </div>
   );
 }
@@ -204,6 +265,112 @@ export function TransactionCard() {
         <SingleTransCard />
         <SingleTransCard />
         <SingleTransCard />
+      </div>
+    </div>
+  );
+}
+
+export function TypeCard() {
+  return (
+    <div className="w-[67px] h-8 px-3 rounded-lg justify-center items-center gap-2 inline-flex">
+      <input
+        type="radio"
+        className="w-4 h-4 opacity-20 rounded-[50%] border border-gray-700 justify-center items-center flex"
+      />
+      <div className="text-gray-800 text-base font-normal font-sans leading-normal">
+        All
+      </div>
+    </div>
+  );
+}
+
+export function CategoryCard() {
+  return (
+    <div className="w-[250px] h-8 justify-between items-center inline-flex">
+      <div className="px-3 rounded-lg justify-between items-center gap-2 flex w-[100%]">
+        <div className="w-5 h-5 relative">
+          <EyeIcon />
+        </div>
+        <div className="flex flex-nowrap text-gray-800 text-base font-normal font-sans leading-normal w-[170px]">
+          Food & Drinks
+        </div>
+        <div className="w-5 h-5">
+          <CateArrowIcon />
+        </div>
+      </div>
+      <div className="w-5 h-5 relative origin-top-left -rotate-90" />
+    </div>
+  );
+}
+
+export function AddCategoryCard() {
+  return (
+    <div className="w-[250px] h-8 justify-between items-center inline-flex">
+      <div className="px-3 rounded-lg justify-center items-center gap-2 flex">
+        <div className="w-5 h-5 relative">
+          <CatePlusIcon />
+        </div>
+        <div className="text-gray-800 text-base font-normal font-sans leading-normal">
+          Add Category
+        </div>
+      </div>
+      <div className="w-5 h-5 px-[7px] origin-top-left -rotate-90 opacity-0 justify-center items-center flex" />
+    </div>
+  );
+}
+
+export function AmounRangeCard() {
+  return (
+    <div className="w-[245px] h-[152px] flex-col justify-start items-start gap-4 inline-flex">
+      <div className="text-gray-800 text-base font-semibold font-sans leading-normal">
+        Amount Range
+      </div>
+      <div className="flex-col justify-start items-center gap-4 flex">
+        <div className="self-stretch justify-start items-start gap-4 inline-flex">
+          <div className="grow shrink basis-0 rounded-lg flex-col justify-center items-center inline-flex">
+            <div className="self-stretch h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center inline-flex">
+              <div>
+                <input
+                  type="text"
+                  className="grow shrink-0 basis-0 text-slate-900 text-base font-normal font-sans leading-normal outline-none bg-gray-100 w-[82.50px]"
+                  value={0}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="grow shrink basis-0 rounded-lg flex-col justify-center items-center inline-flex">
+            <div className="self-stretch h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center inline-flex">
+              <div>
+                <input
+                  type="text"
+                  className="grow shrink-0 basis-0 text-slate-900 text-base font-normal font-sans leading-normal outline-none bg-gray-100 w-[82.50px]"
+                  value={1000}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-[245px] h-12 justify-start items-start gap-[189px] inline-flex relative">
+          <div className="flex-col justify-start items-center gap-1 inline-flex">
+            <div className="p-1 bg-blue-600 rounded-full justify-start items-center gap-2 inline-flex">
+              <div className="w-3 h-3 bg-white rounded-full" />
+            </div>
+            <div className="text-black text-base font-normal font-sans leading-normal">
+              0
+            </div>
+          </div>
+          <div className="w-[220px] absolute stroke-1 stroke-[#0166FF] top-[8px] left-[18px]">
+            <CateSrokeIcon />
+          </div>
+          <div className="flex-col justify-start items-center gap-1 inline-flex">
+            <div className="p-1 bg-blue-600 rounded-full justify-start items-center gap-2 inline-flex">
+              <div className="w-3 h-3 bg-white rounded-full" />
+            </div>
+            <div className="text-black text-base font-normal font-sans leading-normal">
+              1000
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
