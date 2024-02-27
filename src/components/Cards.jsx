@@ -283,7 +283,7 @@ export function TypeCard() {
         <div className="flex gap-2 justify-center items-center">
           <input
             type="radio"
-            className="w-4 h-4 opacity-20 rounded-[50%] border border-gray-700 justify-center items-center flex"
+            className="w-4 h-4 rounded-[50%] border border-gray-200 justify-center items-center flex"
           />
           <div className="text-gray-800 text-base font-normal font-sans leading-normal">
             {type.type}
@@ -426,7 +426,7 @@ export function AllTransTotalCard() {
       <div className="justify-start items-center gap-4 flex">
         <input
           type="checkbox"
-          className="w-6 h-6 opacity-20 rounded border border-gray-800 justify-center items-center flex"
+          className="w-6 h-6 rounded border border-gray-200 justify-center items-center flex"
         />
         <div className="text-black text-base font-normal font-sans leading-normal">
           Select all
@@ -452,7 +452,7 @@ export function TransCard() {
           <div className="justify-start items-center gap-4 flex">
             <input
               type="checkbox"
-              className="w-6 h-6 opacity-20 rounded border border-gray-800"
+              className="w-6 h-6 rounded border border-gray-200"
             />
             <div className="w-10 h-10 bg-blue-600 rounded-full justify-center items-center flex">
               {trans.icon}
@@ -512,6 +512,14 @@ export function YesTransCard() {
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+
+export function StrokeLine() {
+  return (
+    <div className="w-[20px] stroke-1 stroke-[#E5E7EB]">
+      <CateSrokeIcon />
     </div>
   );
 }

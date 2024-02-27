@@ -9,7 +9,6 @@ import {
   AllTransTotalCard,
   TransCard,
 } from "@/components";
-import { Category } from "@/dummyData";
 
 export default function record() {
   return (

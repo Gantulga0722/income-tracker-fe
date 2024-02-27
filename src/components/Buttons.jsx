@@ -25,4 +25,40 @@ export const AddRecordButton = () => {
   );
 };
 
+export const LoginButton = () => {
+  return (
+    <div className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
+      <div className="text-white text-xl font-normal font-sans leading-7">
+        Log in
+      </div>
+    </div>
+  );
+};
+export const SignupButton = () => {
+  return (
+    <div className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
+      <div className="text-white text-xl font-normal font-sans leading-7">
+        Sign up
+      </div>
+    </div>
+  );
+};
 
+export const ConfirmButton = () => {
+  return (
+    <div className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
+      <div className="text-white text-xl font-normal font-sans leading-7">
+        Confirm
+      </div>
+    </div>
+  );
+};
+export const GotoButton = () => {
+  return (
+    <div className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
+      <div className="text-white text-xl font-normal font-sans leading-7">
+        Go to Dashboard
+      </div>
+    </div>
+  );
+};
