@@ -11,12 +11,7 @@ export default function loading() {
           </div>
           <div className="p-[10.08px] justify-start items-center gap-[17.64px] inline-flex" />
           <div className="flex-col justify-start items-center gap-4 flex">
-            <div className="w-8 h-8 justify-start items-start inline-flex">
-              <div className="w-8 h-8 relative">
-                <div className="w-8 h-8 left-0 top-0 absolute rounded-full border-2 border-neutral-200" />
-                <div className="w-8 h-8 left-0 top-0 absolute rounded-full border-2 border-blue-600" />
-              </div>
-            </div>
+            <span className="loading loading-spinner loading-lg bg-blue-700"></span>
             <div className="text-slate-900 text-base font-semibold font-sans leading-normal">
               Түр хүлээнэ үү...
             </div>
