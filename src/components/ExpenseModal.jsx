@@ -50,14 +50,13 @@ export function ExpenseModal() {
                   Category
                 </div>
               </div>
-              <div className="self-stretch h-12 p-4 bg-gray-50 rounded-lg  justify-start items-center inline-flex">
-                <select className="select select-ghost w-full max-w-xs h-10">
-                  <option disabled selected></option>
-                  <option>Svelte</option>
-                  <option>Vue</option>
-                  <option>React</option>
-                </select>
-              </div>
+              <select className="select select-bordered w-[348px] h-12 bg-gray-50">
+                <option disabled selected>
+                  Choose
+                </option>
+                <option>Han Solo</option>
+                <option>Greedo</option>
+              </select>
             </div>
             <div className="self-stretch justify-start items-start gap-3 inline-flex">
               <div className="grow shrink basis-0 rounded-lg flex-col justify-center items-start inline-flex gap-2">
@@ -103,9 +102,12 @@ export function ExpenseModal() {
             </div>
             <div className="self-stretch h-12 p-4 bg-gray-50 rounded-lg border border-gray-300 justify-start items-center inline-flex">
               <div className="grow shrink basis-0 text-slate-400 text-base font-normal font-sans leading-normal">
-                Write here
+                <input
+                  type="text"
+                  className="bg-gray-50 outline-none"
+                  placeholder="Write here"
+                />
               </div>
-              <div className="w-6 h-6 relative" />
             </div>
           </div>
           <div className="self-stretch h-[280px] rounded-lg flex-col justify-center items-start flex gap-2">
@@ -116,7 +118,14 @@ export function ExpenseModal() {
             </div>
             <div className="self-stretch grow shrink basis-0 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-start inline-flex">
               <div className="grow shrink basis-0 text-slate-400 text-base font-normal font-sans leading-normal">
-                Write here
+                <textarea
+                  name=""
+                  id=""
+                  cols="40"
+                  rows="10"
+                  className="bg-gray-100 outline-none"
+                  placeholder="Write here"
+                ></textarea>
               </div>
             </div>
           </div>
