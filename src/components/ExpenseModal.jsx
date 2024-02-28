@@ -1,16 +1,19 @@
-import { IncomeModalButton } from "@/components/Buttons";
+import { AddRecordModalButton } from "@/components/Buttons";
 import { Category, Type, Transactions, YesTransactions } from "@/dummyData";
+import { CloseModalIcon } from "@/components/Icons";
 
 export function ExpenseModal() {
   return (
     <div className="w-[792px] h-content mx-auto">
-      <div className="w-[100%] h-[68px] px-6 py-5 bg-white border-b border-slate-200 justify-between items-center inline-flex">
-        <div className="text-slate-900 text-xl font-semibold font-sans leading-7 flex w-[100%]">
+      <div className="w-[792px] h-[68px] px-6 py-5 bg-white border-b border-slate-200 justify-between items-center inline-flex">
+        <div className="text-slate-900 text-xl font-semibold font-sans leading-7">
           Add Record
         </div>
-        <div className="modal-action">
+        <div className="modal-action flex justify-center items-center">
           <form method="dialog">
-            <button>X</button>
+            <button className="w-6 h-6">
+              <CloseModalIcon />
+            </button>
           </form>
         </div>
       </div>
@@ -36,7 +39,7 @@ export function ExpenseModal() {
               <div className="justify-start items-center gap-2 inline-flex">
                 <input
                   type="text"
-                  className="bg-gray-100 outline-none"
+                  className="bg-gray-100 outline-none text-gray-400 text-xl font-normal font-sans leading-7"
                   placeholder="₮ 000.00"
                 />
               </div>
@@ -86,9 +89,7 @@ export function ExpenseModal() {
             </div>
           </div>
           <div className="self-stretch h-10 px-3 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
-            <div className="text-gray-50 text-base font-normal font-sans leading-normal">
-              Add Record
-            </div>
+            <AddRecordModalButton />
           </div>
         </div>
       </div>

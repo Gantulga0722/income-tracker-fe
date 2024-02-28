@@ -76,11 +76,22 @@ export const ConfirmButton = () => {
     </div>
   );
 };
+
 export const GotoButton = () => {
   return (
     <div className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
       <div className="text-white text-xl font-normal font-sans leading-7">
         Go to Dashboard
+      </div>
+    </div>
+  );
+};
+
+export const AddRecordModalButton = () => {
+  return (
+    <div className="w-[348px] h-10 px-3 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
+      <div className="text-gray-50 text-base font-normal font-sans leading-normal">
+        Add Record
       </div>
     </div>
   );
