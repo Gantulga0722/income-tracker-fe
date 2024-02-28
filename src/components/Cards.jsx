@@ -389,7 +389,7 @@ export function AmounRangeCard() {
 
 export function PagingComp() {
   return (
-    <div className="w-[188px] h-8 justify-start items-center gap-4 inline-flex">
+    <div className="h-8 justify-start items-center gap-4 inline-flex">
       <div className="w-8 h-8 bg-gray-200 rounded-lg justify-center items-center gap-1 flex">
         <div className="w-5 h-5 relative">
           <PageLeftIcon />
