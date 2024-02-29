@@ -27,6 +27,7 @@ import {
   BarElement,
 } from "chart.js";
 import { Doughnut, Bar, Line } from "react-chartjs-2";
+import { CategoryModal } from "./CategoryModal";
 
 ChartJS.register(
   ArcElement,
@@ -317,15 +318,22 @@ export function CategoryCard() {
 export function AddCategoryCard() {
   return (
     <div className="w-[250px] h-8 justify-between items-center inline-flex">
-      <div className="px-3 rounded-lg justify-center items-center gap-2 flex">
+      <button
+        className="rounded-lg justify-center items-center gap-2 flex"
+        onClick={() => document.getElementById("CategoryModal").showModal()}
+      >
         <div className="w-5 h-5 relative">
           <CatePlusIcon />
         </div>
         <div className="text-gray-800 text-base font-normal font-sans leading-normal">
           Add Category
         </div>
-      </div>
-      <div className="w-5 h-5 px-[7px] origin-top-left -rotate-90 opacity-0 justify-center items-center flex" />
+      </button>
+      <dialog id="CategoryModal" className="modal">
+        <div className="modal-box w-[550px] max-w-5xl">
+          <CategoryModal />
+        </div>
+      </dialog>
     </div>
   );
 }

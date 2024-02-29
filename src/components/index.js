@@ -4,3 +4,4 @@ export * from "./Avatar";
 export * from "./Cards";
 export * from "./Charts";
 export * from "./ExpenseModal";
+export * from "./CategoryModal";

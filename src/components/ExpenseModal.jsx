@@ -1,8 +1,12 @@
 import { AddRecordModalButton } from "@/components/Buttons";
-import { Category, Type, Transactions, YesTransactions } from "@/dummyData";
 import { CloseModalIcon } from "@/components/Icons";
+import { useState } from "react";
 
 export function ExpenseModal() {
+  const [color, setColor] = useState();
+
+  const changeColor = () => {};
+
   return (
     <div className="w-[792px] h-content mx-auto">
       <div className="w-[792px] h-[68px] px-6 py-5 bg-white border-b border-slate-200 justify-between items-center inline-flex">
