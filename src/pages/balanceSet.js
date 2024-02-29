@@ -9,10 +9,10 @@ import { ConfirmButton } from "@/components";
 
 export default function currencySelect() {
   return (
-    <div className="w-[1440px] h-[1024px] relative bg-white z-30">
-      <div className="w-[1440px] h-[1024px] pt-10 pb-[399px] bg-white flex-col justify-start items-center gap-[141px] inline-flex">
-        <div className="self-stretch flex-col justify-start items-center gap-12 inline-flex">
-          <div className="p-[5.40px] justify-start items-center gap-[9.46px] inline-flex">
+    <div className="w-screen h-screen bg-white flex justify-center items-start">
+      <div className="pt-10 bg-white flex-col justify-center items-center gap-[141px] inline-flex">
+        <div className="self-stretch flex-col justify-center items-center gap-12 inline-flex">
+          <div className="p-[5.40px] justify-center items-center gap-[9.46px] inline-flex">
             <LoginGeldIcon />
             <LoginGeldTextIcon />
           </div>
@@ -22,7 +22,7 @@ export default function currencySelect() {
             <li className="step">Finish</li>
           </ul>
         </div>
-        <div className="self-stretch flex-col justify-start items-center gap-8 inline-flex">
+        <div className="self-stretch flex-col justify-center items-center gap-8 inline-flex">
           <div className="self-stretch h-[228px] flex-col justify-start items-center gap-3 flex">
             <div className="flex-col justify-start items-center gap-6 flex">
               <div className="flex-col justify-start items-center gap-4 flex">

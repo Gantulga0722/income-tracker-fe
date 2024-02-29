@@ -100,15 +100,13 @@ export function ExpenseModal() {
                 Payee
               </div>
             </div>
-            <div className="self-stretch h-12 p-4 bg-gray-50 rounded-lg border border-gray-300 justify-start items-center inline-flex">
-              <div className="grow shrink basis-0 text-slate-400 text-base font-normal font-sans leading-normal">
-                <input
-                  type="text"
-                  className="bg-gray-50 outline-none"
-                  placeholder="Write here"
-                />
-              </div>
-            </div>
+            <select className="select select-bordered w-[348px] h-12 bg-gray-50">
+              <option disabled selected>
+                Choose
+              </option>
+              <option>Han Solo</option>
+              <option>Greedo</option>
+            </select>
           </div>
           <div className="self-stretch h-[280px] rounded-lg flex-col justify-center items-start flex gap-2">
             <div className="h-[18px] justify-start items-center inline-flex">
@@ -121,7 +119,7 @@ export function ExpenseModal() {
                 <textarea
                   name=""
                   id=""
-                  cols="40"
+                  cols="35"
                   rows="10"
                   className="bg-gray-100 outline-none"
                   placeholder="Write here"

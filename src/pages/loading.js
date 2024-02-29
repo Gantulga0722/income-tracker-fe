@@ -2,8 +2,8 @@ import { LoadingGeldIcon, LoadingGeldTextIcon } from "@/components/Icons";
 
 export default function loading() {
   return (
-    <div className="w-[1440px] h-[1024px] relative bg-white z-30">
-      <div className="w-[1440px] h-[1024px] pt-[404px] pb-[436px] bg-white justify-center items-center inline-flex">
+    <div className="w-screen h-screen justify-center items-center flex bg-white">
+      <div className="w-[100%] h-[100%] pt-[404px] pb-[436px] bg-white justify-center items-center inline-flex">
         <div className="w-[172.23px] h-[184px] flex-col justify-center items-center gap-12 inline-flex">
           <div className="w-[172.23px] h-16 p-[10.08px] justify-center items-center gap-[17.64px] inline-flex">
             <LoadingGeldIcon />

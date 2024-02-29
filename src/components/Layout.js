@@ -3,9 +3,9 @@ import { NavBar } from "@/components";
 const Layout = ({ children }) => {
   return (
     <>
-      <div className=" container max-w-[1440px] mx-auto flex  flex-col">
+      <div className="flex justify-center">
         <NavBar />
-        <main className=" container max-w-[1440px] mx-auto">{children}</main>
+        <main className="mx-auto">{children}</main>
       </div>
     </>
   );

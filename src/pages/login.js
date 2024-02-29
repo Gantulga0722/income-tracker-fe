@@ -3,9 +3,8 @@ import { LoginGeldIcon, LoginGeldTextIcon } from "@/components/Icons";
 
 export default function login() {
   return (
-    <div className="w-[1440px] h-[1024px] relative bg-white z-30">
-      <div className="w-[708px] h-[1024px] left-[732px] top-0 absolute bg-blue-600" />
-      <div className="left-[222px] top-[276.84px] absolute flex-col justify-start items-center gap-10 inline-flex">
+    <div className="w-screen h-screen  bg-white flex">
+      <div className="w-1/2 flex-col items-center gap-10 inline-flex justify-center">
         <div className="p-[5.40px] justify-start items-center gap-[9.46px] inline-flex">
           <LoginGeldIcon />
           <LoginGeldTextIcon />
@@ -50,6 +49,7 @@ export default function login() {
           </div>
         </div>
       </div>
+      <div className="w-1/2 bg-blue-600" />
     </div>
   );
 }
