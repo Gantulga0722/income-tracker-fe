@@ -96,3 +96,16 @@ export const AddRecordModalButton = () => {
     </div>
   );
 };
+
+export const AddCategoryModalButton = () => {
+  return (
+    <div className="self-stretch h-10 px-3 bg-green-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
+      <div className="w-5 h-5">
+        <PlusIcon />
+      </div>
+      <div className="text-gray-50 text-base font-normal font-sans leading-normal">
+        Add
+      </div>
+    </div>
+  );
+};

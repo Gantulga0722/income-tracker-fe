@@ -1,4 +1,28 @@
 import { CloseModalIcon } from "@/components/Icons";
+import { AddCategoryModalButton } from "@/components/Buttons";
+import { CategoryIcons } from "@/dummyData";
+import {
+  WifiIcon,
+  GeldIconWhite,
+  GeldIconText,
+  IncomeIcon,
+  ExpenseIcon,
+  TransIcon,
+  EyeIcon,
+  CateArrowIcon,
+  CatePlusIcon,
+  CateSrokeIcon,
+  FoodDrinkIcon,
+  HouseIcon,
+  HouseLineIcon,
+  CateBadgeIcon,
+  CateIdCardIcon,
+  CateLadderIcon,
+  CateInterSecIcon,
+  CateImgSqIcon,
+  CateMagClasPIcon,
+  CateMicIcon,
+} from "./Icons/Icons";
 
 export function CategoryModal() {
   return (
@@ -19,27 +43,25 @@ export function CategoryModal() {
         <div className="self-stretch h-[120px] flex-col justify-start items-start gap-8 flex">
           <div className="self-stretch justify-start items-start gap-3 inline-flex">
             <div className="justify-start items-start gap-3 flex">
-              <div className="rounded-lg flex-col justify-center items-center inline-flex">
-                <div className="h-12 p-4 bg-gray-50 rounded-lg border border-gray-300 justify-start items-center gap-1 inline-flex">
-                  <div className="w-6 h-6 relative" />
-                  <div className="w-6 h-6 relative" />
-                </div>
-              </div>
+              <select className="select select-bordered rounded-lg flex-col justify-center items-center inline-flex w-[84px] h-12 p-4 bg-gray-50">
+                <option disabled selected></option>
+                {CategoryIcons.map((icon) => (
+                  <option>
+                    {/* {icon.icon} */}
+                    {/* <div className="w-6 h-6">{icon.icon}</div> */}
+                  </option>
+                ))}
+              </select>
             </div>
-            <div className="grow shrink basis-0 rounded-lg flex-col justify-center items-center inline-flex">
-              <div className="self-stretch h-12 p-4 bg-gray-50 rounded-lg border border-gray-300 justify-start items-center inline-flex">
-                <div className="grow shrink basis-0 text-slate-400 text-base font-normal font-sans leading-normal">
-                  Name
-                </div>
-                <div className="w-6 h-6 relative" />
-              </div>
-            </div>
+            <select className="select select-bordered w-[350px] h-12 self-stretch bg-gray-50 rounded-lg border border-gray-300 justify-start items-center inline-flex">
+              <option disabled selected>
+                Name
+              </option>
+              <option>Han Solo</option>
+              <option>Greedo</option>
+            </select>
           </div>
-          <div className="self-stretch h-10 px-3 bg-green-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
-            <div className="text-gray-50 text-base font-normal font-sans leading-normal">
-              Add
-            </div>
-          </div>
+          <AddCategoryModalButton />
         </div>
       </div>
     </div>

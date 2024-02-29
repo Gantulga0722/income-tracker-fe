@@ -417,13 +417,16 @@ export function PagingComp() {
 
 export function SortCard() {
   return (
-    <div className="w-[180px] h-12 p-4 bg-gray-50 rounded-lg border border-gray-300 justify-start items-center inline-flex">
-      <div className="grow shrink basis-0 text-gray-800 text-base font-semibold font-sans leading-normal">
-        Newest fisrt
-      </div>
-      <div className="w-6 h-6 relative">
-        <SortIcon />
-      </div>
+    <div>
+      <select className="select select-bordered w-full max-w-xs w-[180px] h-12 bg-gray-50 rounded-lg border border-gray-300 justify-start items-center inline-flex text-gray-800 text-base font-semibold font-sans leading-normal">
+        <option disabled selected></option>
+        <option className="text-gray-800 text-base font-semibold font-sans leading-normal">
+          Newest first
+        </option>
+        <option className="text-gray-800 text-base font-semibold font-sans leading-normal">
+          Oldest first
+        </option>
+      </select>
     </div>
   );
 }

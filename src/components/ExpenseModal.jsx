@@ -79,7 +79,7 @@ export function ExpenseModal() {
               <div className="grow shrink basis-0 rounded-lg flex-col justify-center items-start inline-flex gap-2">
                 <div className="h-[18px] justify-start items-center inline-flex">
                   <div className="text-gray-800 text-base font-normal font-sans leading-normal">
-                    Date
+                    Time
                   </div>
                 </div>
                 <div className="self-stretch h-12 p-4 bg-gray-50 rounded-lg border border-gray-300 justify-start items-center inline-flex">

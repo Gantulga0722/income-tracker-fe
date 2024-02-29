@@ -10,6 +10,15 @@ import {
   CatePlusIcon,
   CateSrokeIcon,
   FoodDrinkIcon,
+  HouseIcon,
+  HouseLineIcon,
+  CateBadgeIcon,
+  CateIdCardIcon,
+  CateLadderIcon,
+  CateInterSecIcon,
+  CateImgSqIcon,
+  CateMagClasPIcon,
+  CateMicIcon,
 } from "./components/Icons";
 
 export const Category = [
@@ -42,4 +51,16 @@ export const Transactions = [
 export const YesTransactions = [
   { icon: <TransIcon />, category: "lending & Renting" },
   { icon: <FoodDrinkIcon />, category: "Food & Drinks" },
+];
+
+export const CategoryIcons = [
+  { icon: <HouseIcon />, name: "HouseIcon" },
+  { icon: <HouseLineIcon />, name: "HouseLineIcon" },
+  { icon: <CateBadgeIcon />, name: "CateBadgeIcon" },
+  { icon: <CateIdCardIcon />, name: "CateIdCardIcon" },
+  { icon: <CateLadderIcon />, name: "CateLadderIcon" },
+  { icon: <CateInterSecIcon />, name: "CateInterSecIcon" },
+  { icon: <CateImgSqIcon />, name: "CateImgSqIcon" },
+  { icon: <CateMagClasPIcon />, name: "CateMagClasPIcon" },
+  { icon: <CateMicIcon />, name: "CateMicIcon" },
 ];
