@@ -3,9 +3,7 @@ import { CloseModalIcon } from "@/components/Icons";
 import { useState } from "react";
 
 export function ExpenseModal() {
-  const [color, setColor] = useState();
-
-  const changeColor = () => {};
+  const [tab, setTab] = useState("expense");
 
   return (
     <div className="w-[792px] h-content mx-auto">
@@ -23,13 +21,35 @@ export function ExpenseModal() {
       </div>
       <div className="w-[396px] h-[500px] px-6 pt-5 bg-white flex-col justify-start items-start gap-5 inline-flex">
         <div className="self-stretch bg-gray-100 rounded-[100px] justify-start items-start gap-1 inline-flex">
-          <div className="grow shrink basis-0 h-10 px-3 bg-blue-600 rounded-[20px] justify-center items-center gap-1 flex">
-            <div className="text-gray-50 text-base font-normal font-sans leading-normal">
+          <div
+            className={`grow shrink basis-0 h-10 px-3  ${
+              tab == "expense" ? "bg-blue-600" : "bg-gray-100"
+            } rounded-[20px] justify-center items-center gap-1 flex`}
+            onClick={() => {
+              setTab("expense");
+            }}
+          >
+            <div
+              className={` text-base font-normal font-sans leading-normal  ${
+                tab == "expense" ? "text-gray-50" : "text-gray-800"
+              }`}
+            >
               Expense
             </div>
           </div>
-          <div className="grow shrink basis-0 h-10 px-3 bg-gray-100 rounded-[20px] justify-center items-center gap-1 flex">
-            <div className="text-gray-800 text-base font-normal font-sans leading-normal">
+          <div
+            className={`grow shrink basis-0 h-10 px-3 ${
+              tab == "income" ? "bg-green-600" : "bg-gray-100"
+            } rounded-[20px] justify-center items-center gap-1 flex`}
+            onClick={() => {
+              setTab("income");
+            }}
+          >
+            <div
+              className={` text-base font-normal font-sans leading-normal  ${
+                tab == "income" ? "text-gray-50" : "text-gray-800"
+              }`}
+            >
               Income
             </div>
           </div>
@@ -81,6 +101,7 @@ export function ExpenseModal() {
                   <div className="text-gray-800 text-base font-normal font-sans leading-normal">
                     Time
                   </div>
+                  s
                 </div>
                 <div className="self-stretch h-12 p-4 bg-gray-50 rounded-lg border border-gray-300 justify-start items-center inline-flex">
                   <div className="grow shrink basis-0 text-slate-900 text-base font-normal font-sans leading-normal">
@@ -91,8 +112,8 @@ export function ExpenseModal() {
               </div>
             </div>
           </div>
-          <div className="self-stretch h-10 px-3 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
-            <AddRecordModalButton />
+          <div className="self-stretch h-10 rounded-[20px] justify-center items-center gap-1 inline-flex">
+            <AddRecordModalButton tab={tab} setTab={setTab} />
           </div>
         </div>
       </div>

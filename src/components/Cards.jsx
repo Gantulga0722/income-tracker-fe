@@ -279,17 +279,46 @@ export function LastTransCard() {
 export function TypeCard() {
   return (
     <div className="w-[67px] h-8 px-3 rounded-lg justify-center items-start gap-2 inline-flex flex-col">
-      {Type.map((type) => (
-        <div className="flex gap-2 justify-center items-center">
-          <input
-            type="radio"
-            className="w-4 h-4 rounded-[50%] border border-gray-200 justify-center items-center flex"
-          />
-          <div className="text-gray-800 text-base font-normal font-sans leading-normal">
-            {type.type}
-          </div>
-        </div>
-      ))}
+      <div className="flex gap-2 justify-center items-center">
+        <input
+          type="radio"
+          className="w-4 h-4 rounded-[50%] border border-gray-200 justify-center items-center flex"
+          id="1"
+          checked
+        />
+        <label
+          className="text-gray-800 text-base font-normal font-sans leading-normal"
+          for="1"
+        >
+          All
+        </label>
+      </div>
+      <div className="flex gap-2 justify-center items-center">
+        <input
+          type="radio"
+          className="w-4 h-4 rounded-[50%] border border-gray-200 justify-center items-center flex"
+          id="2"
+        />
+        <label
+          className="text-gray-800 text-base font-normal font-sans leading-normal"
+          for="2"
+        >
+          Income
+        </label>
+      </div>
+      <div className="flex gap-2 justify-center items-center">
+        <input
+          type="radio"
+          className="w-4 h-4 rounded-[50%] border border-gray-200 justify-center items-center flex"
+          id="3"
+        />
+        <label
+          className="text-gray-800 text-base font-normal font-sans leading-normal"
+          id="3"
+        >
+          Expense
+        </label>
+      </div>
     </div>
   );
 }
