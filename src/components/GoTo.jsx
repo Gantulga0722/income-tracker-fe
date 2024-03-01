@@ -6,7 +6,7 @@ import {
 import { GotoButton } from "@/components";
 import Link from "next/link";
 
-export default function currencySelect() {
+export function GoTo() {
   return (
     <div className="w-screen h-screen  bg-white flex justify-center items-start">
       <div className="pt-10 bg-white flex-col justify-start items-center gap-[141px] inline-flex">

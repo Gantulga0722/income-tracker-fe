@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import { Category, Type, Transactions, YesTransactions } from "@/dummyData";
 
 import {

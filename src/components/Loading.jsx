@@ -1,6 +1,6 @@
 import { LoadingGeldIcon, LoadingGeldTextIcon } from "@/components/Icons";
 
-export default function loading() {
+export function Loading() {
   return (
     <div className="w-screen h-screen justify-center items-center flex bg-white">
       <div className="w-[100%] h-[100%] pt-[404px] pb-[436px] bg-white justify-center items-center inline-flex">
