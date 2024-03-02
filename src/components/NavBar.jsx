@@ -17,7 +17,9 @@ export const NavBar = () => {
             </span>
           </Link>
           <Link href="/record">
-            <span>Record</span>
+            <span className="text-[#0F172A] font-sans text-[16px] font-semibold not-italic leading-6">
+              Record
+            </span>
           </Link>
         </div>
         <div className="flex items-center gap-6">

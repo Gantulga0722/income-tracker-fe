@@ -1,4 +1,12 @@
-import { Category, Type, Transactions, YesTransactions } from "@/dummyData";
+import {
+  Category,
+  Type,
+  Transactions,
+  YesTransactions,
+  PieChartCardData,
+  BarChartCardData,
+  PieChartData,
+} from "@/dummyData";
 
 import {
   WifiIcon,
@@ -24,9 +32,16 @@ import {
   CategoryScale,
   LinearScale,
   BarElement,
+  Title,
 } from "chart.js";
 import { Doughnut, Bar, Line } from "react-chartjs-2";
 import { CategoryModal } from "./CategoryModal";
+import { useState } from "react";
+
+import "react-range-slider-input/dist/style.css";
+
+import { Slider, RangeSlider, Row, Col, InputGroup, InputNumber } from "rsuite";
+import "rsuite/dist/rsuite.css";
 
 ChartJS.register(
   ArcElement,
@@ -168,47 +183,14 @@ export function BarChartCard() {
           Income - Expense
         </div>
       </div>
-      <div className="w-[588px] h-[226px] px-6 py-8 flex-col justify-end items-start gap-8 inline-flex">
-        <Bar
-          data={{
-            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-            datasets: [
-              {
-                labels: "First",
-                data: [
-                  3000000, 3000000, 3000000, 3000000, 3000000, 3000000, 3000000,
-                ],
-              },
-              {
-                label: "Second",
-                data: [
-                  2100000, 2100000, 2100000, 2100000, 2100000, 2100000, 2100000,
-                ],
-              },
-            ],
-          }}
-        />
+      <div className="w-[100%] h-[226px] py-4 flex-col justify-center items-center flex">
+        <Bar data={BarChartCardData} />
       </div>
     </div>
   );
 }
 
 export function PieChartCard() {
-  const data = {
-    datasets: [
-      {
-        label: "My First Dataset",
-        data: [300, 50, 100],
-        backgroundColor: [
-          "rgb(255, 99, 132)",
-          "rgb(54, 162, 235)",
-          "rgb(255, 205, 86)",
-        ],
-        hoverOffset: 4,
-      },
-    ],
-    labels: ["Red", "Blue", "Yellow"],
-  };
   return (
     <div className="h-[284px] left-[732px] top-[344px] absolute bg-white rounded-xl flex-col justify-start items-start inline-flex">
       <div className="w-[588px] h-14 px-6 py-4 border-b border-slate-200 justify-between items-center inline-flex">
@@ -219,9 +201,27 @@ export function PieChartCard() {
           Jun 1 - Nov 30
         </div>
       </div>
-      <div className="w-[588px] h-[228px] px-6 py-8 flex-col justify-start items-start gap-10 inline-flex">
-        <Doughnut data={data} />
+      <div className="w-[588px] h-[228px] px-6 py-6 justify-start items-start gap-10 inline-flex">
+        <Doughnut data={PieChartData} />
+        <div className="w-[337px] h-[180px] flex-col justify-start items-start gap-4 inline-flex py-3">
+          {PieChartCardData.map((data) => (
+            <div className="flex gap-2 items-center justify-center">
+              <div className={`w-3 h-3 ${data.color} rounded-full`} />
+              <div className="w-[100px] text-gray-900 text-sm font-normal font-sans leading-tight">
+                {data.category}
+              </div>
+              <div className="flex w-[100px] text-gray-900 text-sm font-normal font-sans leading-tight gap-1">
+                {data.amount}
+                {data.currency}
+              </div>
+              <div className="w-[50px] text-gray-900 text-sm font-normal font-sans leading-tight gap-2">
+                {data.percent}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+      <div></div>
     </div>
   );
 }
@@ -279,46 +279,21 @@ export function LastTransCard() {
 export function TypeCard() {
   return (
     <div className="w-[67px] h-8 px-3 rounded-lg justify-center items-start gap-2 inline-flex flex-col">
-      <div className="flex gap-2 justify-center items-center">
-        <input
-          type="radio"
-          className="w-4 h-4 rounded-[50%] border border-gray-200 justify-center items-center flex"
-          id="1"
-          checked
-        />
-        <label
-          className="text-gray-800 text-base font-normal font-sans leading-normal"
-          for="1"
-        >
-          All
-        </label>
-      </div>
-      <div className="flex gap-2 justify-center items-center">
-        <input
-          type="radio"
-          className="w-4 h-4 rounded-[50%] border border-gray-200 justify-center items-center flex"
-          id="2"
-        />
-        <label
-          className="text-gray-800 text-base font-normal font-sans leading-normal"
-          for="2"
-        >
-          Income
-        </label>
-      </div>
-      <div className="flex gap-2 justify-center items-center">
-        <input
-          type="radio"
-          className="w-4 h-4 rounded-[50%] border border-gray-200 justify-center items-center flex"
-          id="3"
-        />
-        <label
-          className="text-gray-800 text-base font-normal font-sans leading-normal"
-          id="3"
-        >
-          Expense
-        </label>
-      </div>
+      {Type.map((t) => (
+        <div className="flex gap-2 justify-center items-center">
+          <input
+            type="radio"
+            className="w-4 h-4 rounded-[50%] border border-gray-200 justify-center items-center flex"
+            id="1"
+          />
+          <label
+            className="text-gray-800 text-base font-normal font-sans leading-normal"
+            for="1"
+          >
+            {t.type}
+          </label>
+        </div>
+      ))}
     </div>
   );
 }
@@ -367,56 +342,54 @@ export function AddCategoryCard() {
 }
 
 export function AmounRangeCard() {
+  const [value, setValue] = useState([0, 1000]);
   return (
     <div className="w-[245px] h-[152px] flex-col justify-start items-start gap-4 inline-flex">
       <div className="text-gray-800 text-base font-semibold font-sans leading-normal">
         Amount Range
       </div>
-      <div className="flex-col justify-start items-center gap-4 flex">
-        <div className="self-stretch justify-start items-start gap-4 inline-flex">
-          <div className="grow shrink basis-0 rounded-lg flex-col justify-center items-center inline-flex">
-            <div className="self-stretch h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center inline-flex">
-              <div>
-                <input
-                  type="text"
-                  className="grow shrink-0 basis-0 text-slate-900 text-base font-normal font-sans leading-normal outline-none bg-gray-100 w-[82.50px]"
-                  value={0}
-                />
-              </div>
-            </div>
-          </div>
-          <div className="grow shrink basis-0 rounded-lg flex-col justify-center items-center inline-flex">
-            <div className="self-stretch h-12 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center inline-flex">
-              <div>
-                <input
-                  type="text"
-                  className="grow shrink-0 basis-0 text-slate-900 text-base font-normal font-sans leading-normal outline-none bg-gray-100 w-[82.50px]"
-                  value={1000}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="flex-col justify-start items-center gap-6 flex">
         <div className="w-[245px] h-12 justify-start items-start gap-[189px] inline-flex relative">
-          <div className="flex-col justify-start items-center gap-1 inline-flex">
-            <div className="p-1 bg-blue-600 rounded-full justify-start items-center gap-2 inline-flex">
-              <div className="w-3 h-3 bg-white rounded-full" />
+          <Row>
+            <div className="self-stretch justify-start items-start gap-4 inline-flex">
+              <InputGroup>
+                <InputNumber
+                  min={0}
+                  max={1000}
+                  value={value[0]}
+                  onChange={(nextValue) => {
+                    const [start, end] = value;
+                    if (nextValue > end) {
+                      return;
+                    }
+                    setValue([nextValue, end]);
+                  }}
+                />
+                <InputNumber
+                  min={0}
+                  max={1000}
+                  value={value[1]}
+                  onChange={(nextValue) => {
+                    const [start, end] = value;
+                    if (start > nextValue) {
+                      return;
+                    }
+                    setValue([start, nextValue]);
+                  }}
+                />
+              </InputGroup>
             </div>
-            <div className="text-black text-base font-normal font-sans leading-normal">
-              0
-            </div>
-          </div>
-          <div className="w-[220px] absolute stroke-1 stroke-[#0166FF] top-[8px] left-[18px]">
-            <CateSrokeIcon />
-          </div>
-          <div className="flex-col justify-start items-center gap-1 inline-flex">
-            <div className="p-1 bg-blue-600 rounded-full justify-start items-center gap-2 inline-flex">
-              <div className="w-3 h-3 bg-white rounded-full" />
-            </div>
-            <div className="text-black text-base font-normal font-sans leading-normal">
-              1000
-            </div>
-          </div>
+            <Col md={0} xs={1000}>
+              <RangeSlider
+                progress
+                style={{ marginTop: 20, width: 240 }}
+                value={value}
+                onChange={(value) => {
+                  setValue(value);
+                }}
+              />
+            </Col>
+          </Row>
         </div>
       </div>
     </div>
@@ -446,8 +419,10 @@ export function PagingComp() {
 export function SortCard() {
   return (
     <div>
-      <select className="select select-bordered w-full max-w-xs w-[180px] h-12 bg-gray-50 rounded-lg border border-gray-300 justify-start items-center inline-flex text-gray-800 text-base font-semibold font-sans leading-normal">
-        <option disabled selected></option>
+      <select className="select select-bordered max-w-xs w-[180px] h-12 bg-gray-50 rounded-lg border border-gray-300 justify-start items-center inline-flex text-gray-800 text-base font-semibold font-sans leading-normal">
+        <option disabled selected>
+          Select sort
+        </option>
         <option className="text-gray-800 text-base font-semibold font-sans leading-normal">
           Newest first
         </option>

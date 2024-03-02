@@ -64,3 +64,68 @@ export const CategoryIcons = [
   { icon: <CateMagClasPIcon />, name: "CateMagClasPIcon" },
   { icon: <CateMicIcon />, name: "CateMicIcon" },
 ];
+
+export const BarChartCardData = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+  datasets: [
+    {
+      label: "Income",
+      data: [3000000, 3000000, 3000000, 3000000, 3000000, 3000000, 3000000],
+      backgroundColor: "#84CC16",
+      borderRadius: 10,
+    },
+    {
+      label: "Expense",
+      data: [2100000, 2100000, 2100000, 2100000, 2100000, 2100000, 2100000],
+      backgroundColor: "#F97316",
+      borderRadius: 10,
+    },
+  ],
+};
+
+export const PieChartData = {
+  datasets: [
+    {
+      data: [5000000, 5000000, 5000000, 5000000, 5000000],
+      backgroundColor: ["#1C64F2", "#E74694", "#FDBA8C", "#16BDCA", "#F2901C"],
+    },
+  ],
+};
+
+export const PieChartCardData = [
+  {
+    category: "Bills",
+    amount: 5000000,
+    currency: "₮",
+    percent: "20%",
+    color: "bg-blue-600",
+  },
+  {
+    category: "Food",
+    amount: 5000000,
+    currency: "₮",
+    percent: "20%",
+    color: "bg-pink-500",
+  },
+  {
+    category: "Shopping",
+    amount: 5000000,
+    currency: "₮",
+    percent: "20%",
+    color: "bg-orange-300",
+  },
+  {
+    category: "Insurance",
+    amount: 5000000,
+    currency: "₮",
+    percent: "20%",
+    color: "bg-cyan-500",
+  },
+  {
+    category: "Clothing",
+    amount: 5000000,
+    currency: "₮",
+    percent: "20%",
+    color: "bg-amber-500",
+  },
+];
