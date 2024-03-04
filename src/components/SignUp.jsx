@@ -1,5 +1,6 @@
 import { SignupButton } from "@/components";
 import { LoginGeldIcon, LoginGeldTextIcon } from "@/components/Icons";
+import Link from "next/link";
 
 export function SignUp({ showLoader, setShowLoader }) {
   return (
@@ -70,9 +71,11 @@ export function SignUp({ showLoader, setShowLoader }) {
             Already have account?
           </div>
           <div className=" px-3 rounded-[20px] justify-center items-center gap-1 flex">
-            <div className="text-blue-600 text-base font-normal font-sans leading-normal">
-              Log in
-            </div>
+            <Link href="/login">
+              <div className="text-blue-600 text-base font-normal font-sans leading-normal">
+                Log in
+              </div>
+            </Link>
           </div>
         </div>
       </div>
