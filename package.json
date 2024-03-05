@@ -19,6 +19,7 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "react-icon-picker": "^1.0.0",
+    "react-icons-picker": "^1.0.9",
     "react-native-icon-picker": "^1.0.6",
     "react-range-slider-input": "^3.0.7",
     "rsuite": "^5.55.0"
