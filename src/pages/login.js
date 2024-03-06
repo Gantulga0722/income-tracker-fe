@@ -3,6 +3,28 @@ import { LoginGeldIcon, LoginGeldTextIcon } from "@/components/Icons";
 import Link from "next/link";
 
 export default function login({ showLoader, setShowLoader }) {
+  const BE_URL = "http://localhost:4000/login";
+
+  const handleLoginUser = async (e) => {
+    e.preventDefault();
+    const data = {
+      email: e.target.email.value,
+      password: e.target.password.value,
+    };
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    const FETCHED_DATA = await fetch(BE_URL, options);
+    const FETCHED_JSON = await FETCHED_DATA.text();
+
+    console.log(data);
+  };
+
   return (
     <div className="w-screen h-screen  bg-white flex">
       <div className="w-1/2 flex-col items-center gap-10 inline-flex justify-center">
