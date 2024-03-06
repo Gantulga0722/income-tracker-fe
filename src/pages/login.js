@@ -22,7 +22,7 @@ export default function login({ showLoader, setShowLoader }) {
     const FETCHED_DATA = await fetch(BE_URL, options);
     const FETCHED_JSON = await FETCHED_DATA.text();
 
-    console.log(data);
+    console.log("fethc", FETCHED_JSON);
   };
 
   return (
@@ -60,7 +60,7 @@ export default function login({ showLoader, setShowLoader }) {
             </div>
           </div>
         </div>
-        <LoginButton />
+        <LoginButton handleLoginUser={handleLoginUser} />
         <div className="justify-start items-baseline inline-flex">
           <div className="text-slate-900 text-base font-normal font-sans leading-normal">
             Don’t have account?
