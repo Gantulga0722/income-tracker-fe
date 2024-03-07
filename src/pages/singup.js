@@ -8,51 +8,35 @@ import {
 import React, { useState } from "react";
 
 export default function signup() {
-  const [showLoader, setShowLoader] = useState("signup");
-  const [step, setStep] = useState(1);
-  return (
-    <div>
-      <div
-        className={`flex flex-row h-screen w-full ${
-          showLoader == "signup" ? "block" : "hidden"
-        }`}
-      >
-        <SignUp showLoader={showLoader} setShowLoader={setShowLoader} />
-      </div>
-      <div className={`${showLoader == "Loading" ? "block" : "hidden"}`}>
-        <Loading showLoader={showLoader} setShowLoader={setShowLoader} />
-      </div>
-      <div
-        className={`${
-          showLoader == "currencyselect" ? "pt-10 block" : "hidden"
-        }`}
-      >
-        <CurrencySelect
-          setStep={setStep}
-          step={step}
-          showLoader={showLoader}
-          setShowLoader={setShowLoader}
-        />
-      </div>
-      <div
-        className={`${showLoader == "balanceset" ? "pt-10 block" : "hidden"}`}
-      >
-        <BalanceSet
-          setStep={setStep}
-          s
-          step={step}
-          showLoader={showLoader}
-          setShowLoader={setShowLoader}
-        />
-      </div>
-      <div className={`${showLoader == "goto" ? "pt-10 block" : "hidden"}`}>
-        <GoTo
-          setStep={setStep}
-          step={step}
-          showLoader={showLoader}
-          setShowLoader={setShowLoader}
-        />
-      </div>
-    </div>
-  );
+  const [step, setStep] = useState(0);
+  switch (step) {
+    case 0:
+      return (
+        <div
+          className={`${
+            step == 0 ? "block" : "hidden"
+          } flex flex-row h-screen w-full`}
+        >
+          <SignUp setStep={setStep} />
+        </div>
+      );
+    case 1:
+      return (
+        <div className={`${step == 1 ? "pt-10 block" : "hidden"}`}>
+          <CurrencySelect setStep={setStep} />
+        </div>
+      );
+    case 2:
+      return (
+        <div className={`${step == 2 ? "pt-10 block" : "hidden"}`}>
+          <BalanceSet setStep={setStep} />
+        </div>
+      );
+    default:
+      return (
+        <div>
+          <GoTo />
+        </div>
+      );
+  }
 }

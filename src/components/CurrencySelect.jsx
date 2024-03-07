@@ -6,7 +6,7 @@ import {
 } from "@/components/Icons";
 import { ConfirmButton } from "@/components";
 
-export function CurrencySelect() {
+export function CurrencySelect({ setStep }) {
   return (
     <div className="w-screen h-screen relative bg-white flex justify-center items-start pt-10">
       <div className="bg-white flex-col justify-center items-center gap-[141px] inline-flex">
@@ -49,7 +49,7 @@ export function CurrencySelect() {
               one
             </div>
           </div>
-          <ConfirmButton />
+          <ConfirmButton setStep={setStep} />
         </div>
       </div>
     </div>

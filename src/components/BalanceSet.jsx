@@ -5,9 +5,9 @@ import {
   SortIcon,
   BalanceIcon,
 } from "@/components/Icons";
-import { ConfirmButton } from "@/components";
+import { ConfirmButtonBalance } from "@/components";
 
-export function BalanceSet() {
+export function BalanceSet({ setStep }) {
   return (
     <div className="w-screen h-screen bg-white flex justify-center items-start">
       <div className="pt-10 bg-white flex-col justify-center items-center gap-[141px] inline-flex">
@@ -47,7 +47,7 @@ export function BalanceSet() {
               How much cash do you have in your wallet? one
             </div>
           </div>
-          <ConfirmButton />
+          <ConfirmButtonBalance setStep={setStep} />
         </div>
       </div>
     </div>

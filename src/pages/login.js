@@ -1,17 +1,20 @@
 import { LoginButton } from "@/components";
 import { LoginGeldIcon, LoginGeldTextIcon } from "@/components/Icons";
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function login({ showLoader, setShowLoader }) {
   const BE_URL = "http://localhost:4000/login";
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setPassword] = useState("");
+  const router = useRouter();
 
-  const handleLoginUser = async (e) => {
-    e.preventDefault();
+  const handleLoginUser = async () => {
     const data = {
-      email: e.target.email.value,
-      password: e.target.password.value,
+      email: userEmail,
+      password: userPassword,
     };
-
     const options = {
       method: "POST",
       headers: {
@@ -20,9 +23,14 @@ export default function login({ showLoader, setShowLoader }) {
       body: JSON.stringify(data),
     };
     const FETCHED_DATA = await fetch(BE_URL, options);
-    const FETCHED_JSON = await FETCHED_DATA.text();
-
+    const FETCHED_JSON = await FETCHED_DATA.json();
     console.log("fethc", FETCHED_JSON);
+
+    if ((FETCHED_JSON.success = "true")) {
+      router.push("/");
+    } else {
+      alert("somethin went wrong");
+    }
   };
 
   return (
@@ -47,6 +55,7 @@ export default function login({ showLoader, setShowLoader }) {
                 type="text"
                 className="grow shrink basis-0 text-neutral-400 bg-gray-100 text-base font-normal font-sans leading-normal w-96 h-10 outline-none p-4"
                 placeholder="Email"
+                onChange={(e) => setUserEmail(e.target.value)}
               />
             </div>
           </div>
@@ -56,6 +65,7 @@ export default function login({ showLoader, setShowLoader }) {
                 type="password"
                 className="grow shrink basis-0 text-neutral-400 bg-gray-100 text-base font-normal font-sans leading-normal w-96 h-10 outline-none p-4"
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
           </div>

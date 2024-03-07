@@ -48,12 +48,13 @@ export const AddRecordButton = () => {
 };
 
 export const LoginButton = (props) => {
-  const handler = props;
-  console.log("handle", handler);
+  const handler = props.handleLoginUser;
   return (
     <div
       className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex"
-      onClick={() => handler()}
+      onClick={() => {
+        handler();
+      }}
     >
       <div className="text-white text-xl font-normal font-sans leading-7">
         Log in
@@ -72,9 +73,24 @@ export const SignupButton = () => {
   );
 };
 
-export const ConfirmButton = () => {
+export const ConfirmButton = ({ setStep }) => {
   return (
-    <div className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
+    <div
+      className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex"
+      onClick={() => setStep(2)}
+    >
+      <div className="text-white text-xl font-normal font-sans leading-7">
+        Confirm
+      </div>
+    </div>
+  );
+};
+export const ConfirmButtonBalance = ({ setStep }) => {
+  return (
+    <div
+      className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex"
+      onClick={() => setStep(3)}
+    >
       <div className="text-white text-xl font-normal font-sans leading-7">
         Confirm
       </div>
