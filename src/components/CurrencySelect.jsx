@@ -5,8 +5,28 @@ import {
   SortIcon,
 } from "@/components/Icons";
 import { ConfirmButton } from "@/components";
+import { useState } from "react";
 
-export function CurrencySelect({ setStep }) {
+export function CurrencySelect({ setStep, userId }) {
+  const BE_URL = "http://localhost:4000/currency-select";
+  const [currency, setCurrency] = useState("");
+
+  const handlerCurrency = async () => {
+    const data = {
+      currency: currency,
+      id: userId,
+    };
+    const option = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    const FETCHED_DATA = await fetch(BE_URL, option);
+    const FETCHED_JSON = await FETCHED_DATA.json();
+  };
+
   return (
     <div className="w-screen h-screen relative bg-white flex justify-center items-start pt-10">
       <div className="bg-white flex-col justify-center items-center gap-[141px] inline-flex">
@@ -34,13 +54,19 @@ export function CurrencySelect({ setStep }) {
                   Select base currency
                 </div>
               </div>
-              <select className="select select-bordered w-96 h-16 p-4">
+              <select
+                className="select select-bordered w-96 h-16 p-4"
+                onChange={(e) => {
+                  setCurrency(e.target.value);
+                }}
+              >
                 <option disabled selected>
-                  MNT -Mongolian Tugrik
+                  Select Currency
                 </option>
-                <option>USD - American Dollar</option>
-                <option>EUR - Euro</option>
-                <option>CHY - Chinese Yuan</option>
+                <option>MNT</option>
+                <option>USD</option>
+                <option>EUR</option>
+                <option>CHY</option>
               </select>
             </div>
             <div className="w-96 text-slate-600 text-xs font-normal font-sans leading-none">
@@ -49,7 +75,7 @@ export function CurrencySelect({ setStep }) {
               one
             </div>
           </div>
-          <ConfirmButton setStep={setStep} />
+          <ConfirmButton handlerCurrency={handlerCurrency} setStep={setStep} />
         </div>
       </div>
     </div>

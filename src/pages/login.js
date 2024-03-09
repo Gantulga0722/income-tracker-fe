@@ -29,7 +29,7 @@ export default function login({ showLoader, setShowLoader }) {
     if ((FETCHED_JSON.success = "true")) {
       router.push("/");
     } else {
-      alert("somethin went wrong");
+      alert("Email or password is incorrect");
     }
   };
 

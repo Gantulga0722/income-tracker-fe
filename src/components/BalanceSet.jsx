@@ -39,7 +39,7 @@ export function BalanceSet({ setStep }) {
                 <input
                   type="text"
                   className="w-96 h-10 p-4 justify-start items-center inline-flex bg-gray-100 outline-none"
-                  placeholder="Email"
+                  placeholder="Set Balance here"
                 ></input>
               </div>
             </div>

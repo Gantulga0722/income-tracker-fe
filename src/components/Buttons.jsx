@@ -73,11 +73,13 @@ export const SignupButton = () => {
   );
 };
 
-export const ConfirmButton = ({ setStep }) => {
+export const ConfirmButton = ({ handlerCurrency, setStep }) => {
   return (
     <div
       className="w-96 h-12 px-4 bg-blue-600 rounded-[20px] justify-center items-center gap-1 inline-flex"
-      onClick={() => setStep(2)}
+      onClick={() => {
+        handlerCurrency(), setStep(2);
+      }}
     >
       <div className="text-white text-xl font-normal font-sans leading-7">
         Confirm
@@ -122,9 +124,14 @@ export const AddRecordModalButton = ({ tab }) => {
   );
 };
 
-export const AddCategoryModalButton = () => {
+export const AddCategoryModalButton = ({ handlerCategory }) => {
   return (
-    <div className="self-stretch h-10 px-3 bg-green-600 rounded-[20px] justify-center items-center gap-1 inline-flex">
+    <div
+      className="self-stretch h-10 px-3 bg-green-600 rounded-[20px] justify-center items-center gap-1 inline-flex cursor-pointer"
+      onClick={() => {
+        handlerCategory();
+      }}
+    >
       <div className="w-5 h-5">
         <PlusIcon />
       </div>
