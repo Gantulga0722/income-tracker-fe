@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 export default function login({ showLoader, setShowLoader }) {
   const BE_URL = "http://localhost:4000/login";
+  const BE_URLID = "http://localhost:4000/user-id";
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setPassword] = useState("");
   const router = useRouter();
@@ -31,6 +32,23 @@ export default function login({ showLoader, setShowLoader }) {
     } else {
       alert("Email or password is incorrect");
     }
+  };
+
+  const hadlerUserId = async () => {
+    const data = {
+      email: userEmail,
+      password: userPassword,
+    };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    const fetched_dataId = await fetch(BE_URLID, options);
+    const fetched_jsonId = await fetched_dataId.json();
+    console.log("ID is:", fetched_jsonId);
   };
 
   return (
@@ -70,7 +88,10 @@ export default function login({ showLoader, setShowLoader }) {
             </div>
           </div>
         </div>
-        <LoginButton handleLoginUser={handleLoginUser} />
+        <LoginButton
+          handleLoginUser={handleLoginUser}
+          hadlerUserId={hadlerUserId}
+        />
         <div className="justify-start items-baseline inline-flex">
           <div className="text-slate-900 text-base font-normal font-sans leading-normal">
             Don’t have account?
