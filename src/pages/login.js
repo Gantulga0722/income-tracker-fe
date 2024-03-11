@@ -26,29 +26,14 @@ export default function login({ showLoader, setShowLoader }) {
     const FETCHED_DATA = await fetch(BE_URL, options);
     const FETCHED_JSON = await FETCHED_DATA.json();
     console.log("fethc", FETCHED_JSON);
+    console.log("id:", FETCHED_JSON.result.rows[0].id);
+    const userId = FETCHED_JSON.result.rows[0].id;
 
-    if (FETCHED_JSON.result.rowCount) {
+    if (FETCHED_JSON.result.rowCount == 1) {
       router.push("/");
     } else {
       alert("Email or password is incorrect");
     }
-  };
-
-  const hadlerUserId = async () => {
-    const data = {
-      email: userEmail,
-      password: userPassword,
-    };
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    };
-    const fetched_dataId = await fetch(BE_URLID, options);
-    const fetched_jsonId = await fetched_dataId.json();
-    console.log("ID is:", fetched_jsonId);
   };
 
   return (
@@ -88,10 +73,7 @@ export default function login({ showLoader, setShowLoader }) {
             </div>
           </div>
         </div>
-        <LoginButton
-          handleLoginUser={handleLoginUser}
-          hadlerUserId={hadlerUserId}
-        />
+        <LoginButton handleLoginUser={handleLoginUser} />
         <div className="justify-start items-baseline inline-flex">
           <div className="text-slate-900 text-base font-normal font-sans leading-normal">
             Don’t have account?
