@@ -27,7 +27,7 @@ export default function login({ showLoader, setShowLoader }) {
     const FETCHED_JSON = await FETCHED_DATA.json();
     console.log("fethc", FETCHED_JSON);
 
-    if ((FETCHED_JSON.success = "true")) {
+    if (FETCHED_JSON.result.rowCount) {
       router.push("/");
     } else {
       alert("Email or password is incorrect");
