@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-export default function login({ showLoader, setShowLoader }) {
+export default function login() {
   const BE_URL = "http://localhost:4000/login";
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setPassword] = useState("");

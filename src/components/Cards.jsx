@@ -298,10 +298,10 @@ export function TypeCard() {
   );
 }
 
-export function CategoryCard() {
+export function CategoryCard({ category }) {
   return (
     <div className="self-stretch flex-col justify-start items-start gap-2 flex">
-      {Category.map((cate) => (
+      {category.map((cate) => (
         <div className="px-3 rounded-lg justify-between items-center gap-2 flex w-[100%]">
           <div className="w-5 h-5 relative">
             <EyeIcon />

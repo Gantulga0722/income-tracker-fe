@@ -27,11 +27,9 @@ export default function record() {
     const fetched_data = await fetch(BE_URL, options);
     const fetched_json = await fetched_data.json();
 
-    if ((fetched_json.message = "success")) {
-      router.push("/record");
-    } else {
-      alert("Something went wrong");
-    }
+    console.log(fetched_json.result);
+
+    setCategory(fetched_json);
   };
   return (
     <div className="w-screen  bg-gray-100 ">
@@ -70,7 +68,7 @@ export default function record() {
               </div>
             </div>
             <div className="self-stretch h-[472px] flex-col justify-start items-start gap-2 flex">
-              <CategoryCard />
+              <CategoryCard category={category} />
             </div>
             <div>
               <AddCategoryCard />
