@@ -25,8 +25,12 @@ export default function login({ showLoader, setShowLoader }) {
     const FETCHED_DATA = await fetch(BE_URL, options);
     const FETCHED_JSON = await FETCHED_DATA.json();
     console.log("fethc", FETCHED_JSON);
-    console.log("id:", FETCHED_JSON.result.rows[0].id);
+
     const userId = FETCHED_JSON.result.rows[0].id;
+
+    localStorage.setItem("userId", userId);
+
+    console.log("user ID", localStorage.getItem("userId"));
 
     if (FETCHED_JSON.result.rowCount == 1) {
       router.push("/");

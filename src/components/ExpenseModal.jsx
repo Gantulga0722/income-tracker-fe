@@ -101,7 +101,6 @@ export function ExpenseModal() {
                   <div className="text-gray-800 text-base font-normal font-sans leading-normal">
                     Time
                   </div>
-                  
                 </div>
                 <div className="self-stretch h-12 p-4 bg-gray-50 rounded-lg border border-gray-300 justify-start items-center inline-flex">
                   <div className="grow shrink basis-0 text-slate-900 text-base font-normal font-sans leading-normal">
