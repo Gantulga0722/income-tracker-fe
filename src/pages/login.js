@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 
 export default function login({ showLoader, setShowLoader }) {
   const BE_URL = "http://localhost:4000/login";
-  const BE_URLID = "http://localhost:4000/user-id";
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setPassword] = useState("");
   const router = useRouter();
