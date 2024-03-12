@@ -10,8 +10,29 @@ import {
   TransCard,
 } from "@/components";
 import Layout from "@/components/Layout";
+import { useState } from "react";
 
 export default function record() {
+  const BE_URL = "http://localhost:4000/get-category";
+  const [category, setCategory] = useState();
+
+  const handlerCategory = async () => {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    const fetched_data = await fetch(BE_URL, options);
+    const fetched_json = await fetched_data.json();
+
+    if ((fetched_json.message = "success")) {
+      router.push("/record");
+    } else {
+      alert("Something went wrong");
+    }
+  };
   return (
     <div className="w-screen  bg-gray-100 ">
       <div className="w-[1440px] h-[1208px] relative pt-24 px-[120px] py-4 justify-between flex mx-auto">
