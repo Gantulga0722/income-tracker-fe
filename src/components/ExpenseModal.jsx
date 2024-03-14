@@ -75,9 +75,7 @@ export function ExpenseModal() {
                 </div>
               </div>
               <select className="select select-bordered w-[348px] h-12 bg-gray-50">
-                <option disabled selected>
-                  Choose
-                </option>
+                <option defaultValue={"Select category"}>Choose</option>
                 <option>Han Solo</option>
                 <option>Greedo</option>
               </select>

@@ -16,21 +16,20 @@ export default function record() {
   const BE_URL = "http://localhost:4000/get-category";
   const [category, setCategory] = useState();
 
-  // const handlerCategory = async () => {
-  //   const options = {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   };
-  //   const fetched_data = await fetch(BE_URL, options);
-  //   const fetched_json = await fetched_data.json();
+  const handlerCategory = async () => {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const fetched_data = await fetch(BE_URL, options);
+    const fetched_json = await fetched_data.json();
 
-  //   console.log(fetched_json.result);
-
-  //   setCategory(fetched_json);
-  // };
+    console.log("result:", fetched_json);
+    // setCategory({ fetched_json });
+  };
+  handlerCategory();
   return (
     <div className="w-screen  bg-gray-100 ">
       <div className="w-[1440px] h-[1208px] relative pt-24 px-[120px] py-4 justify-between flex mx-auto">
@@ -68,7 +67,7 @@ export default function record() {
               </div>
             </div>
             <div className="self-stretch h-[472px] flex-col justify-start items-start gap-2 flex">
-              <CategoryCard category={category} />
+              {/* <CategoryCard category={category} /> */}
             </div>
             <div>
               <AddCategoryCard />
