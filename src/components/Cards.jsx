@@ -299,7 +299,7 @@ export function TypeCard() {
 }
 
 export function CategoryCard({ category }) {
-  
+  console.log("cat", category);
   return (
     <div className="self-stretch flex-col justify-start items-start gap-2 flex">
       {category.map((cate) => (
@@ -308,7 +308,7 @@ export function CategoryCard({ category }) {
             <EyeIcon />
           </div>
           <div className="flex flex-nowrap text-gray-800 text-base font-normal font-sans leading-normal w-[170px]">
-            {cate.category}
+            {cate.name}
           </div>
           <div className="w-5 h-5">
             <CateArrowIcon />

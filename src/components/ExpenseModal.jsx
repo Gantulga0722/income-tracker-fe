@@ -2,7 +2,7 @@ import { AddRecordModalButton } from "@/components/Buttons";
 import { CloseModalIcon } from "@/components/Icons";
 import { useState } from "react";
 
-export function ExpenseModal() {
+export function ExpenseModal(category) {
   const [tab, setTab] = useState("expense");
 
   return (

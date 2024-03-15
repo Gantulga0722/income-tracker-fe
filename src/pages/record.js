@@ -10,26 +10,28 @@ import {
   TransCard,
 } from "@/components";
 import Layout from "@/components/Layout";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function record() {
+export default function Record() {
   const BE_URL = "http://localhost:4000/get-category";
-  const [category, setCategory] = useState();
+  const [category, setCategory] = useState([]);
 
-  const handlerCategory = async () => {
-    const options = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
+  useEffect(() => {
+    const fetchData = async () => {
+      const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const data = await fetch(BE_URL, options);
+      const json = await data.json();
+      setCategory(json);
     };
-    const fetched_data = await fetch(BE_URL, options);
-    const fetched_json = await fetched_data.json();
 
-    console.log("result:", fetched_json);
-    // setCategory({ fetched_json });
-  };
-  handlerCategory();
+    fetchData().catch(console.error);
+  }, []);
+  console.log("cat", category);
   return (
     <div className="w-screen  bg-gray-100 ">
       <div className="w-[1440px] h-[1208px] relative pt-24 px-[120px] py-4 justify-between flex mx-auto">
@@ -38,7 +40,7 @@ export default function record() {
             <div className="text-black text-2xl font-semibold font-sans leading-loose">
               Records
             </div>
-            <AddRecordButton />
+            <AddRecordButton category={category} />
           </div>
           <div className="w-[250px] h-8 p-4 bg-gray-100 rounded-lg border border-gray-300 justify-start items-center inline-flex mt-4">
             <input
@@ -67,7 +69,7 @@ export default function record() {
               </div>
             </div>
             <div className="self-stretch h-[472px] flex-col justify-start items-start gap-2 flex">
-              {/* <CategoryCard category={category} /> */}
+              <CategoryCard category={category} />
             </div>
             <div>
               <AddCategoryCard />
@@ -109,6 +111,6 @@ export default function record() {
     </div>
   );
 }
-record.getLayout = function getLayout(page) {
+Record.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };

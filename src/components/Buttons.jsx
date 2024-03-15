@@ -24,7 +24,7 @@ export const RecordButton = () => {
   );
 };
 
-export const AddRecordButton = () => {
+export const AddRecordButton = (category) => {
   return (
     <div>
       <button
@@ -40,7 +40,7 @@ export const AddRecordButton = () => {
       </button>
       <dialog id="ExpenseModal" className="modal">
         <div className="modal-box w-[870px] max-w-5xl">
-          <ExpenseModal />
+          <ExpenseModal category={category} />
         </div>
       </dialog>
     </div>
