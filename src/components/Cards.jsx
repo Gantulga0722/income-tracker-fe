@@ -299,7 +299,6 @@ export function TypeCard() {
 }
 
 export function CategoryCard({ category }) {
-  console.log("cat", category);
   return (
     <div className="self-stretch flex-col justify-start items-start gap-2 flex">
       {category.map((cate) => (

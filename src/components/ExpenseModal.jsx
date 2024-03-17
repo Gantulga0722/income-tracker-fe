@@ -2,8 +2,9 @@ import { AddRecordModalButton } from "@/components/Buttons";
 import { CloseModalIcon } from "@/components/Icons";
 import { useState } from "react";
 
-export function ExpenseModal(category) {
+export function ExpenseModal({ category }) {
   const [tab, setTab] = useState("expense");
+  console.log("Modal category", category);
 
   return (
     <div className="w-[792px] h-content mx-auto">
@@ -76,8 +77,9 @@ export function ExpenseModal(category) {
               </div>
               <select className="select select-bordered w-[348px] h-12 bg-gray-50">
                 <option defaultValue={"Select category"}>Choose</option>
-                <option>Han Solo</option>
-                <option>Greedo</option>
+                {/* {category.map((cate) => (
+                  <option>{cate.name}</option>
+                ))} */}
               </select>
             </div>
             <div className="self-stretch justify-start items-start gap-3 inline-flex">
